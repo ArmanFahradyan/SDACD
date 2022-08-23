@@ -20,15 +20,15 @@ dev = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 test_loader = get_test_loaders(opt,batch_size=2)
 
 model = load_model_test(opt, dev)
-path_cd = 'tmp/checkpoint_cd_epoch_best.pt'   # the path of the model
+path_cd = './SDACD_weights/checkpoint_cd_epoch_best.pt'   # the path of the model
 model.load_state_dict(torch.load(path_cd, map_location='cpu'))
 
 G_AB = load_gan_generator_test(opt, dev)
-path_g_ab = 'tmp/checkpoint_gab_epoch_best.pt'
+path_g_ab = './SDACD_weights/checkpoint_gab_epoch_best.pt'
 G_AB.load_state_dict(torch.load(path_g_ab, map_location='cpu'))
 
 G_BA = load_gan_generator_test(opt, dev)
-path_g_ba = 'tmp/checkpoint_gba_epoch_best.pt'
+path_g_ba = './SDACD_weights/checkpoint_gba_epoch_best.pt'
 G_BA.load_state_dict(torch.load(path_g_ba, map_location='cpu'))
 
 model.eval()

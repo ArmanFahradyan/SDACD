@@ -26,15 +26,15 @@ test_loader = get_test_loaders(opt, batch_size=1)
 # test_loader = get_test_loaders(opt)
 
 model = load_model_test(opt, dev)
-path_cd = 'tmp-ia/checkpoint_cd_epoch_20.pt'   # the path of the model
+path_cd = "./SDACD_weights/checkpoint_cd_epoch_20.pt"  # 'tmp-ia/checkpoint_cd_epoch_20.pt'   # the path of the model
 model.load_state_dict(torch.load(path_cd, map_location='cpu'))
 
 G_AB = load_gan_generator_test(opt, dev)
-path_g_ab = 'tmp-ia/checkpoint_gab_epoch_20.pt'
+path_g_ab = "./SDACD_weights/checkpoint_gab_epoch_20.pt"  # 'tmp-ia/checkpoint_gab_epoch_20.pt'
 G_AB.load_state_dict(torch.load(path_g_ab, map_location='cpu'))
 
 G_BA = load_gan_generator_test(opt, dev)
-path_g_ba = 'tmp-ia/checkpoint_gba_epoch_20.pt'
+path_g_ba = "./SDACD_weights/checkpoint_gba_epoch_20.pt"  # 'tmp-ia/checkpoint_gba_epoch_20.pt'
 G_BA.load_state_dict(torch.load(path_g_ba, map_location='cpu'))
 
 def unnormalize(tensor):
