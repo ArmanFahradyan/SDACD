@@ -5,7 +5,7 @@ import random
 file_train = open('train-before.txt',"w")
 out = open("train.txt","w")
 n=0
-path_train = "/home/arman/PycharmProjects/pythonProject/change_detection/ChangeDetectionDataset/Real/subset/train/"  # '/scratch/dubo_01/liujia/Dataset/WHU-building-dataset/train_nooverlap/'
+path_train = "./ChangeDetectionDataset/Real/subset/train/"  # '/scratch/dubo_01/liujia/Dataset/WHU-building-dataset/train_nooverlap/'
 path_train_list = sorted(os.listdir(path_train+'A/'))
 random.shuffle(path_train_list)
 for file_A in path_train_list:
@@ -42,7 +42,7 @@ for line in lines:
 print("ok_train")
 
 file_val = open('val.txt',"w")
-path_val = "/home/arman/PycharmProjects/pythonProject/change_detection/ChangeDetectionDataset/Real/subset/val/"  # '/scratch/dubo_01/liujia/Dataset/WHU-building-dataset/test_nooverlap/'
+path_val = "./ChangeDetectionDataset/Real/subset/val/"  # '/scratch/dubo_01/liujia/Dataset/WHU-building-dataset/test_nooverlap/'
 path_val_list = sorted(os.listdir(path_val + 'A/'))
 random.shuffle(path_val_list)
 for file_A in path_val_list:
@@ -58,7 +58,7 @@ file_val.close()
 print("ok_val")
 
 file_test = open('test.txt',"w")
-path_test = "/home/arman/PycharmProjects/pythonProject/change_detection/ChangeDetectionDataset/Real/subset/test/"  # '/scratch/dubo_01/liujia/Dataset/WHU-building-dataset/test_nooverlap/'
+path_test = "./ChangeDetectionDataset/Real/subset/test/"  # '/scratch/dubo_01/liujia/Dataset/WHU-building-dataset/test_nooverlap/'
 path_test_list = sorted(os.listdir(path_test+'A/'))
 random.shuffle(path_test_list)
 for file_A in path_test_list:
